@@ -1,0 +1,11 @@
+\ifdefined\formula
+\else
+\def\formula{$$E=mc^2$$}
+\fi
+% \documentclass[convert={density=150,size=1080x800,outext=.png}]{standalone}
+\documentclass[border=2pt,varwidth]{standalone}
+\usepackage[margin=1in]{geometry}
+\usepackage{array,standalone,mathtools,amssymb,amsthm} % imports amsmath
+\begin{document}
+\formula
+\end{document}
