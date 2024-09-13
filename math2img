@@ -1,7 +1,9 @@
+#!/usr/bin/bash
+
 # Expects a gfm markdown document from pandoc (-t gfm) with TeX equations (without --webtex).
 # ARGS: a GFM markdown file and an output directory
 # STDOUT: a new GFM markdown with equations replaced with their references to png files
-# Example: math2img eqn <~/code/sh/tex/gfm.md
+# Example: math2img eqn <gfm.md
 math2img(){
   # assume no space in OUTDIR
   # [ $# -ne 2 ] && echo "two arguments are needed; received $#" >&2 && return 1
@@ -14,7 +16,7 @@ math2img(){
   # for inline eqn, quote non-equation text to prevent expansions: 'this is tex '$eqn$' and more text'
   # $P&$A or $P\2$A
   # interactive bash calls stty -ixon and gives "Inappropriate ioctl for device" warning. 
-  local P="bash -c 'source "$DIR"/math2img.sh; _m2i '\\\''" 
+  local P="bash -c 'source "$DIR"/math2img; _m2i '\\\''" 
   local A="'\\\'' $OUTDIR'"
   local B='(\$\$[^$]*|\\begin\{(align|multiline|equation|displaymath).?\})'
   local E='(\$\$|\\end\{(align|multiline|equation|displaymath).?\})'
