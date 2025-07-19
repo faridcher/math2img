@@ -18,7 +18,7 @@ chmod +x eqn2img.sh
 # Usage
 ```sh
 # first argument is an auto-created directory to put the images and a (Github) Markdown document is read from stdin
-./math2img eqn < gfm.md
+./math2img eqn/ < gfm.md
 ```
 
 # Alternatives
@@ -26,11 +26,11 @@ chmod +x eqn2img.sh
 - [GladTex](https://github.com/humenda/GladTeX) written in Python; use it in combination with `pandoc --gladtex` option.
 - [math2img](https://github.com/kkew3/math2img) written in Perl
 
-Relative to the above alternatives, this script is simpler and minimal dependencies.
+Compared to the above alternatives, this script is simpler and with minimal dependencies.
 
 # Limitations
 - Only works with equations enclosed in single $ for inline and double dollar sign ($$) for display equations
-- Sed scripts are concise but notorious for not being readable and hence this Bash script as well
+- Sed scripts are concise but notorious for being inaccessible to human
 
 # Todo
 - Support \[\] for display and \(\) for inline equations
